@@ -35,6 +35,14 @@
   },
   "name":"CAMPFIRE",
   "resources":[
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"oHorizontal","path":"objects/oHorizontal/oHorizontal.yy",},},
+    {"id":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},},
+    {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
+    {"id":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},},
+    {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",

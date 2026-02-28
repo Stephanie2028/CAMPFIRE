@@ -5,10 +5,35 @@
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
+<<<<<<< Updated upstream
   "instanceCreationOrder":[],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+=======
+  "instanceCreationOrder":[
+    {"name":"inst_5F44AF46","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_18D8BCFE","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_1C8E1C0C","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_16A905CC","path":"rooms/Room1/Room1.yy",},
+    {"name":"platform1","path":"rooms/Room1/Room1.yy",},
+  ],
+  "isDnd":false,
+  "layers":[
+    {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_5F44AF46","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5F44AF46","objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":208.0,},
+        {"$GMRInstance":"v4","%Name":"inst_18D8BCFE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18D8BCFE","objectId":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":0.25,"x":0.0,"y":224.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1C8E1C0C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C8E1C0C","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"propertyId":{"name":"platformID","path":"objects/oPoint/oPoint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"platform1",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"propertyId":{"name":"startingPoint","path":"objects/oPoint/oPoint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"true",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.25,"scaleY":0.25,"x":96.0,"y":208.0,},
+        {"$GMRInstance":"v4","%Name":"inst_16A905CC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_16A905CC","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"propertyId":{"name":"platformID","path":"objects/oPoint/oPoint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"platform1",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oPoint","path":"objects/oPoint/oPoint.yy",},"propertyId":{"name":"startingPoint","path":"objects/oPoint/oPoint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.25,"scaleY":0.25,"x":272.0,"y":48.0,},
+        {"$GMRInstance":"v4","%Name":"platform1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"platform1","objectId":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.25,"scaleY":0.25,"x":64.0,"y":192.0,},
+      ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+>>>>>>> Stashed changes
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"Room1",
