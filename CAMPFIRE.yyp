@@ -35,12 +35,16 @@
   },
   "name":"CAMPFIRE",
   "resources":[
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"obj_arc1","path":"objects/obj_arc1/obj_arc1.yy",},},
+    {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
+    {"id":{"name":"obj_enemyHealth","path":"objects/obj_enemyHealth/obj_enemyHealth.yy",},},
+    {"id":{"name":"BossRoom1","path":"rooms/BossRoom1/BossRoom1.yy",},},
+    {"id":{"name":"spr_head","path":"sprites/spr_head/spr_head.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"BossRoom1","path":"rooms/BossRoom1/BossRoom1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
