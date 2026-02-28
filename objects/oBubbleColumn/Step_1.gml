@@ -1,0 +1,2 @@
+targetX = endX;
+targetY = endY;

@@ -35,6 +35,7 @@
   },
   "name":"CAMPFIRE",
   "resources":[
+    {"id":{"name":"oBubbleColumn","path":"objects/oBubbleColumn/oBubbleColumn.yy",},},
     {"id":{"name":"oJumpPad","path":"objects/oJumpPad/oJumpPad.yy",},},
     {"id":{"name":"oMovingPlatform","path":"objects/oMovingPlatform/oMovingPlatform.yy",},},
     {"id":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},},
