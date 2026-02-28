@@ -1,0 +1,1 @@
+y *= velocityY * MAX_POWER;
