@@ -1,13 +1,14 @@
-// interpolates between MIN and MAX based on mouse pos 
+// Movement tuning
+MOVEMENT_SPEED = 2;
+JUMP_POWER = 5;
+FRICTION = 0.8;
+
+// Launch tuning
 MIN_POWER = 2;
 MAX_POWER = 15;
-
 MAX_MAGNITUDE = 150;
 
-GRAVITY = 0.6;
-
-MOVEMENT_SPEED = 10;
-JUMP_POWER = 10;
+GRAVITY = 0.2;
 
 // States
 isDragging = false;

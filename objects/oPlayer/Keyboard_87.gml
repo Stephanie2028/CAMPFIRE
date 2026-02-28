@@ -1,1 +1,0 @@
-velocityY = -JUMP_POWER;
