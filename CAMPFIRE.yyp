@@ -31,21 +31,18 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.3.217",
   },
   "name":"CAMPFIRE",
   "resources":[
     {"id":{"name":"obj_arc1","path":"objects/obj_arc1/obj_arc1.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"obj_enemyHealth","path":"objects/obj_enemyHealth/obj_enemyHealth.yy",},},
-    {"id":{"name":"BossRoom1","path":"rooms/BossRoom1/BossRoom1.yy",},},
     {"id":{"name":"spr_head","path":"sprites/spr_head/spr_head.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
-  "RoomOrderNodes":[
-    {"roomId":{"name":"BossRoom1","path":"rooms/BossRoom1/BossRoom1.yy",},},
-  ],
+  "RoomOrderNodes":[],
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
