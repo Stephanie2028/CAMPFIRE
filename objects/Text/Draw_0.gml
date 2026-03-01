@@ -1,0 +1,1 @@
+draw_text(x, y, "Elevation: -10000 blocks");
