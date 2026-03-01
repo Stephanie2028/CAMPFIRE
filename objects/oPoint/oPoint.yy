@@ -26,15 +26,15 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"platformID","filters":[],"listItems":[],"multiselect":false,"name":"platformID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"bubble1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"platformID","filters":[],"listItems":[],"multiselect":false,"name":"platformID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"platform1","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"startingPoint","filters":[],"listItems":[],"multiselect":false,"name":"startingPoint","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayer",
-    "path":"sprites/sPlayer/sPlayer.yy",
+    "name":"spr_head",
+    "path":"sprites/spr_head/spr_head.yy",
   },
   "spriteMaskId":null,
   "visible":true,

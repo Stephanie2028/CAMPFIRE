@@ -1,28 +1,30 @@
 // Moving platforms
 var movingPlatform = instance_place(x, y + 1, oMovingPlatform);
 
-if (movingPlatform && bbox_bottom <= movingPlatform.bbox_top + 1) {
-    y = movingPlatform.bbox_top - (bbox_bottom - y);
-
-    if (velocityY >= 0) {
+if (movingPlatform) {
+    if (velocityY >= 0 && bbox_bottom <= movingPlatform.bbox_top + 2) {
+        y = movingPlatform.bbox_top - (bbox_bottom - y);
         velocityY = 0;
     }
+	if (!place_meeting(x + movingPlatform.deltaX, y, oSolid)) {
+		x += movingPlatform.deltaX;
+	}
 
-    x += movingPlatform.moveX;
-    y += movingPlatform.moveY;
+	// Vertical carry
+	if (!place_meeting(x, y + movingPlatform.deltaY, oSolid)) {
+	y += movingPlatform.deltaY;
+	}
 }
 
 // Bubble columns
 var bubbleColumn = instance_place(x, y, oBubbleColumn);
 
 if (bubbleColumn) {
-    var bx = sign(bubbleColumn.targetX - x);
+
     var by = sign(bubbleColumn.targetY - y) * bubbleColumn.blastPower;
 
     velocityX = 0;
     velocityY = 0;
-
-    x += bx;
     y += by;
 }
 

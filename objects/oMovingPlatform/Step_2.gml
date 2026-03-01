@@ -1,6 +1,3 @@
-x += moveX;
-y += moveY;
-
 if(movingToStart && point_distance(x, y, startX, startY) < moveSpeed){
 	movingToStart = false;
 	moveSpeed = constSpeed;

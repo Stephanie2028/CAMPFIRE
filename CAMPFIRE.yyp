@@ -42,7 +42,9 @@
     {"id":{"name":"obj_arc1","path":"objects/obj_arc1/obj_arc1.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"obj_enemyHealth","path":"objects/obj_enemyHealth/obj_enemyHealth.yy",},},
+    {"id":{"name":"oBossA","path":"objects/oBossA/oBossA.yy",},},
     {"id":{"name":"oBubbleColumn","path":"objects/oBubbleColumn/oBubbleColumn.yy",},},
+    {"id":{"name":"oEnemyA","path":"objects/oEnemyA/oEnemyA.yy",},},
     {"id":{"name":"oJumpPad","path":"objects/oJumpPad/oJumpPad.yy",},},
     {"id":{"name":"oMovingPlatform","path":"objects/oMovingPlatform/oMovingPlatform.yy",},},
     {"id":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},},
@@ -51,6 +53,7 @@
     {"id":{"name":"oPreventionPad","path":"objects/oPreventionPad/oPreventionPad.yy",},},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},},
     {"id":{"name":"Text","path":"objects/Text/Text.yy",},},
+    {"id":{"name":"BossRoom","path":"rooms/BossRoom/BossRoom.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sBLUE","path":"sprites/sBLUE/sBLUE.yy",},},
     {"id":{"name":"sPlatform","path":"sprites/sPlatform/sPlatform.yy",},},
@@ -61,6 +64,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"BossRoom","path":"rooms/BossRoom/BossRoom.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
