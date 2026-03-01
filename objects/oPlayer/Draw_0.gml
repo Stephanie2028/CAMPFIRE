@@ -14,10 +14,10 @@ if (isDragging)
 
         var clampedLen = min(MAX_MAGNITUDE, len);
 
-        var launchStrength = MIN_POWER +
-            (MAX_POWER - MIN_POWER) * (clampedLen / MAX_MAGNITUDE);
+        var launchStrength = FLING_MIN_POWER +
+            (FLING_MAX_POWER - FLING_MIN_POWER) * (clampedLen / MAX_MAGNITUDE);
 
-        var arrowLength = launchStrength * 10;
+        var arrowLength = launchStrength * 14;
 
         var endX = x + nx * arrowLength;
         var endY = y + ny * arrowLength;

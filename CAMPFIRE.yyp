@@ -38,11 +38,10 @@
   },
   "name":"CAMPFIRE",
   "resources":[
+    {"id":{"name":"Basic","path":"fonts/Basic/Basic.yy",},},
     {"id":{"name":"obj_arc1","path":"objects/obj_arc1/obj_arc1.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"obj_enemyHealth","path":"objects/obj_enemyHealth/obj_enemyHealth.yy",},},
-    {"id":{"name":"spr_head","path":"sprites/spr_head/spr_head.yy",},},
-    {"id":{"name":"Basic","path":"fonts/Basic/Basic.yy",},},
     {"id":{"name":"oBubbleColumn","path":"objects/oBubbleColumn/oBubbleColumn.yy",},},
     {"id":{"name":"oJumpPad","path":"objects/oJumpPad/oJumpPad.yy",},},
     {"id":{"name":"oMovingPlatform","path":"objects/oMovingPlatform/oMovingPlatform.yy",},},
@@ -56,10 +55,13 @@
     {"id":{"name":"sBLUE","path":"sprites/sBLUE/sBLUE.yy",},},
     {"id":{"name":"sPlatform","path":"sprites/sPlatform/sPlatform.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
+    {"id":{"name":"spr_head","path":"sprites/spr_head/spr_head.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
-  "RoomOrderNodes":[],
+  "RoomOrderNodes":[
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+  ],
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},

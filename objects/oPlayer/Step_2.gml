@@ -1,172 +1,122 @@
-// ----------------------------------
-// 1) Ground Check
-// ----------------------------------
+// Moving platforms
+var movingPlatform = instance_place(x, y + 1, oMovingPlatform);
 
-onGround = place_meeting(x, y + 1, oSolid);
+if (movingPlatform && bbox_bottom <= movingPlatform.bbox_top + 1) {
+    y = movingPlatform.bbox_top - (bbox_bottom - y);
 
-
-// ----------------------------------
-// 2) Begin Drag
-// ----------------------------------
-
-if (mouse_check_button_pressed(mb_left) && onGround)
-{
-    isDragging = true;
-}
-
-
-// ----------------------------------
-// 3) Release Drag → Launch
-// ----------------------------------
-
-if (mouse_check_button_released(mb_left) && isDragging && onGround)
-{
-    var dx = mouse_x - x;
-    var dy = mouse_y - y;
-
-    var len = point_distance(0, 0, dx, dy);
-
-    if (len > 0)
-    {
-        var nx = dx / len;
-        var ny = dy / len;
-
-        var clampedLen = min(MAX_MAGNITUDE, len);
-
-        var launchStrength = MIN_POWER +
-            (MAX_POWER - MIN_POWER) * (clampedLen / MAX_MAGNITUDE);
-
-        velocityX = nx * launchStrength;
-        velocityY = ny * launchStrength;
+    if (velocityY >= 0) {
+        velocityY = 0;
     }
 
-    isDragging = false;
+    x += movingPlatform.moveX;
+    y += movingPlatform.moveY;
 }
 
+// Bubble columns
+var bubbleColumn = instance_place(x, y, oBubbleColumn);
 
-// ----------------------------------
-// 4) Horizontal Input (A / D)
-// ----------------------------------
+if (bubbleColumn) {
+    var bx = sign(bubbleColumn.targetX - x);
+    var by = sign(bubbleColumn.targetY - y) * bubbleColumn.blastPower;
 
-var moveInput = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+    velocityX = 0;
+    velocityY = 0;
 
-if (moveInput != 0)
-{
-    velocityX += moveInput * MOVEMENT_SPEED;
+    x += bx;
+    y += by;
 }
 
+// Ground state
+var onGround = place_meeting(x, y + 1, oSolid);
+var inputX   = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 
-// ----------------------------------
-// 5) Apply Gravity (Stronger Fall)
-// ----------------------------------
-
-if (velocityY < 0)
-{
-    velocityY += GRAVITY;
-}
-else
-{
-    velocityY += GRAVITY * 1.5;
+// Friction
+if (onGround && inputX == 0) {
+    velocityX *= GROUND_FRICTION;
+} else if (!onGround) {
+    velocityX *= AIR_FRICTION;
 }
 
-
-// ----------------------------------
-// 6) Horizontal Movement (Safe)
-// ----------------------------------
-
+// Horizontal movement
 var moveX = velocityX;
 
-while (abs(moveX) > 0)
-{
-    var stepX = clamp(moveX, -1, 1);
+while (abs(moveX) >= 1) {
+    var stepX = sign(moveX);
 
-    if (!place_meeting(x + stepX, y, oSolid))
-    {
+    if (!place_meeting(x + stepX, y, oSolid)) {
         x += stepX;
         moveX -= stepX;
-    }
-    else
-    {
+    } else {
         velocityX = 0;
+        moveX = 0;
         break;
     }
 }
 
+if (moveX != 0) {
+    if (!place_meeting(x + moveX, y, oSolid)) {
+        x += moveX;
+    } else {
+        velocityX = 0;
+    }
+}
 
-// ----------------------------------
-// 7) Vertical Movement (Safe)
-// ----------------------------------
-
+// Vertical movement
 var moveY = velocityY;
 
-while (abs(moveY) > 0)
-{
-    var stepY = clamp(moveY, -1, 1);
+while (abs(moveY) >= 1) {
+    var stepY = sign(moveY);
 
-    if (!place_meeting(x, y + stepY, oSolid))
-    {
+    if (!place_meeting(x, y + stepY, oSolid)) {
         y += stepY;
         moveY -= stepY;
-    }
-    else
-    {
+    } else {
         velocityY = 0;
+        moveY = 0;
         break;
     }
 }
 
+if (moveY != 0) {
+    if (!place_meeting(x, y + moveY, oSolid)) {
+        y += moveY;
+    } else {
+        velocityY = 0;
+    }
+}
 
-// ----------------------------------
-// 8) Friction (Only When No Input)
-// ----------------------------------
+// Fling animation
+if (!onGround && flingPose != -1) {
+    var vx = velocityX;
+    var vy = velocityY;
 
-if (moveInput == 0)
-{
-    if (round(velocityX) != 0)
-    {
-        var frictionApplied = sign(velocityX) * FRICTION;
+    if (abs(vx) + abs(vy) >= 0.05) {
+        var ax = abs(vx);
+        var ay = abs(vy);
 
-        if (!onGround)
-        {
-            frictionApplied /= 4;
+        if (ay > ax * VERTICAL_DOMINANCE) {
+            flingPose = (vy < 0) ? 3 : 4;
+        } else {
+            flingPose = (vy < 0) ? 0 : 2;
         }
 
-        velocityX -= frictionApplied;
+        image_index = flingPose;
+        image_speed = 0;
+
+        if (vx != 0) {
+            image_xscale = -sign(vx) * SPRITE_SCALE;
+        }
     }
-    else
-    {
-        velocityX = 0;
-    }
 }
 
+// Velocity cap
+velocityX = clamp(velocityX, -MAX_FLING_SPEED, MAX_FLING_SPEED);
+velocityY = clamp(velocityY, -MAX_FLING_SPEED, MAX_FLING_SPEED);
 
-// ----------------------------------
-// 9) Keep Inside Room Bounds
-// ----------------------------------
-
-var halfW = sprite_width * 0.5;
-var halfH = sprite_height * 0.5;
-
-if (x < halfW)
-{
-    x = halfW;
-    velocityX = 0;
+// Landing
+if (onGround && !wasOnGround) {
+    flingPose = -1;
+    image_index = 0;
 }
 
-if (x > room_width - halfW)
-{
-    x = room_width - halfW;
-    velocityX = 0;
-}
-
-if (y < halfH)
-{
-    y = halfH;
-    velocityY = 0;
-}
-
-if (y > room_height - halfH)
-{
-    y = room_height - halfH;
-    velocityY = 0;
-}
+wasOnGround = onGround;

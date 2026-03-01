@@ -1,26 +1,21 @@
-// handle moving platforms
-var movingPlatform = instance_place(x, y + 1, oMovingPlatform);
+// Input
+var inputX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+velocityX += inputX * MOVE_ACCEL;
 
-if (movingPlatform && bbox_bottom <= movingPlatform.bbox_top + 1)
-{
-
-    y = movingPlatform.bbox_top - (bbox_bottom - y);
-    if (velocityY >= 0)
-        velocityY = 0;
-    x += movingPlatform.moveX;
-    y += movingPlatform.moveY;
+if (inputX != 0) {
+	image_xscale = -inputX * SPRITE_SCALE;	
 }
 
-// handle bubble columns
-var bubbleColumn = instance_place(x, y, oBubbleColumn);
-if(bubbleColumn){
-
-	moveX = sign(bubbleColumn.targetX - x);
-	moveY = sign(bubbleColumn.targetY - y) * bubbleColumn.blastPower;
-
-	velocityY *= 0;
-	velocityX *= 0;
-	
-	x += moveX;
-	y += moveY;
+// Running Velocity Cap
+if (inputX != 0) {
+    velocityX = clamp(velocityX, -MAX_RUN_SPEED, MAX_RUN_SPEED);
 }
+
+// Gravity
+if (velocityY < 0) {
+    velocityY += GRAVITY_UP;
+} else {
+    velocityY += GRAVITY_DOWN;
+}
+
+velocityY = min(velocityY, MAX_FALL_SPEED);
